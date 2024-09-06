@@ -31,3 +31,7 @@ func (b *Bishop) GetColor() c.PieceColor {
 func (b *Bishop) SetColor(color c.PieceColor) {
 	b.Color = color
 }
+
+func (b *Bishop) IsValidMove(newLocation PieceLocation) {
+	panic("implement these thangs")
+}

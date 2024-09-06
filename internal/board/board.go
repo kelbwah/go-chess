@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	c "github.com/kelbwah/go-chess/constants"
-	p "github.com/kelbwah/go-chess/pieces"
+	p "github.com/kelbwah/go-chess/internal/pieces"
 )
 
 type Board struct {
@@ -12,7 +12,10 @@ type Board struct {
 }
 
 func CreateBoard() *Board {
-	return &Board{}
+	board := &Board{}
+	board.InitBoardState()
+
+	return board
 }
 
 func (b *Board) InitBoardState() {
@@ -68,7 +71,7 @@ func (b *Board) Move(*p.Piece, *p.PieceLocation, *p.PieceLocation) bool {
 	return false
 }
 
-func (b *Board) Reset() {
+func (b *Board) ResetBoard() {
 	b.State = [8][8]p.Piece{}
 }
 

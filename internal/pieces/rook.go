@@ -31,3 +31,7 @@ func (r *Rook) GetColor() c.PieceColor {
 func (r *Rook) SetColor(color c.PieceColor) {
 	r.Color = color
 }
+
+func (r *Rook) IsValidMove(newLocation PieceLocation) {
+	panic("implement these thangs")
+}

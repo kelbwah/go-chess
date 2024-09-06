@@ -31,3 +31,7 @@ func (p *Pawn) GetColor() c.PieceColor {
 func (p *Pawn) SetColor(color c.PieceColor) {
 	p.Color = color
 }
+
+func (p *Pawn) IsValidMove(newLocation PieceLocation) {
+	panic("implement these thangs")
+}

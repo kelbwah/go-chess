@@ -14,4 +14,5 @@ type Piece interface {
 	SetType(c.PieceType)
 	GetColor() c.PieceColor
 	SetColor(color c.PieceColor)
+	IsValidMove(newLocation PieceLocation)
 }

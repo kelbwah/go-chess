@@ -31,3 +31,7 @@ func (q *Queen) GetColor() c.PieceColor {
 func (q *Queen) SetColor(color c.PieceColor) {
 	q.Color = color
 }
+
+func (q *Queen) IsValidMove(newLocation PieceLocation) {
+	panic("implement these thangs")
+}

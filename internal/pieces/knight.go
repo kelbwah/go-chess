@@ -31,3 +31,7 @@ func (k *Knight) GetColor() c.PieceColor {
 func (k *Knight) SetColor(color c.PieceColor) {
 	k.Color = color
 }
+
+func (k *Knight) IsValidMove(newLocation PieceLocation) {
+	panic("implement these thangs")
+}

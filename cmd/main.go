@@ -1,31 +1,23 @@
 package main
 
 import (
-	rl "github.com/gen2brain/raylib-go/raylib"
-	b "github.com/kelbwah/go-chess/board"
-)
+	"fmt"
+	"os"
 
-const (
-	WIDTH  = 1280
-	HEIGHT = 720
+	c "github.com/kelbwah/go-chess/constants"
+	"github.com/kelbwah/go-chess/utils"
 )
 
 func main() {
-	board := b.CreateBoard()
-	board.InitBoardState()
-	board.Print()
+	flag, err := utils.ParseFlag()
+	if err != nil {
+		fmt.Printf("Error while parsing flags: %s.", err.Error())
+		os.Exit(1)
+	}
 
-	rl.InitWindow(WIDTH, HEIGHT, "go-chess")
-	defer rl.CloseWindow()
-
-	rl.SetTargetFPS(60)
-
-	for !rl.WindowShouldClose() {
-		rl.BeginDrawing()
-
-		rl.ClearBackground(rl.RayWhite)
-		rl.DrawText("go-chess", ((WIDTH / 2) - 100), ((HEIGHT / 2) - 100), 20, rl.LightGray)
-
-		rl.EndDrawing()
+	if flag == c.GAME {
+		utils.InitDrawLoop()
+	} else {
+		fmt.Println("server!")
 	}
 }
